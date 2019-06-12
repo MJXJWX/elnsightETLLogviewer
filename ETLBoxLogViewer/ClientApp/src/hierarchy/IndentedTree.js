@@ -143,6 +143,20 @@ export class IndentedTree {
         nodeenter.append("text")
             .attr("dx", 7)
             .attr("dy", 15)
+            .attr("stroke", function (d) {
+                if ((d.data.message + "").toLowerCase().indexOf("exception") >= 0) {
+                    return "red";
+                } else {
+                    return "";
+                }
+            })
+            .attr("stroke-width", function (d) {
+                if ((d.data.message + "").toLowerCase().indexOf("exception") >= 0) {
+                    return "0.5";
+                } else {
+                    return "";
+                }
+            })
             .text(function (d) {
                 return "#" + d.data.logKey
                     + (d.data.taskType ? " | " + d.data.taskType : "")

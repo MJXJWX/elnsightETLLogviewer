@@ -38,7 +38,7 @@ namespace ETLBoxLogViewer.Controllers {
                 test["logDate"] = reader["LogDate"]?.ToString();
                 test["level"] = reader["Level"]?.ToString();
                 test["stage"] = reader["Stage"]?.ToString();
-                test["message"] = reader["Message"]?.ToString();
+                test["message"] = reader["Message"]?.ToString()+" "+ reader["TaskAction"]?.ToString().ToLower();
                 test["taskType"] = reader["TaskType"]?.ToString();
                 test["taskAction"] = reader["TaskAction"]?.ToString();
                 test["taskHash"] = reader["TaskHash"]?.ToString();
