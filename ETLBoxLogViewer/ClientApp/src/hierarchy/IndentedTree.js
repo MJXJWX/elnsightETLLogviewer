@@ -144,14 +144,14 @@ export class IndentedTree {
             .attr("dx", 7)
             .attr("dy", 15)
             .attr("stroke", function (d) {
-                if ((d.data.message + "").toLowerCase().indexOf("exception") >= 0) {
+                if ((d.level + "").toLowerCase().indexOf("error") >= 0) {
                     return "red";
                 } else {
                     return "";
                 }
             })
             .attr("stroke-width", function (d) {
-                if ((d.data.message + "").toLowerCase().indexOf("exception") >= 0) {
+                if ((d.level + "").toLowerCase().indexOf("error") >= 0) {
                     return "0.5";
                 } else {
                     return "";
